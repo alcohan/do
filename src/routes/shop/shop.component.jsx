@@ -1,16 +1,17 @@
 import { useContext } from 'react';
 import { ProductContext } from '../../contexts/product.context';
+import ProductCard from '../../components/product-card/product-card.component';
+
+import './shop.styles.scss';
 
 const Shop = () => {
     const { Product } = useContext(ProductContext);
     return (
-        <div>
+        <div className='products-container'>
             {
                 Product ?
-                (Product.map( ( {id, name, imageUrl, price} ) => 
-                    <div key={id}>
-                        <h1>{name}</h1>
-                    </div>
+                (Product.map( ( product ) => 
+                    <ProductCard key={product.id} product={product}/>
                 ))
                 : "No products loaded."
             }
