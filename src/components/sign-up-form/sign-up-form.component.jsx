@@ -3,8 +3,6 @@ import { useState, useContext } from 'react';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
-import { UserContext } from '../../contexts/user.context';
-
 import { 
     createAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth
@@ -23,8 +21,6 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
 
-    const { setCurrentUser } = useContext(UserContext);
-    
     //note: since this component is hooked into Context using below code,
     //it re-renders anytime context is updated
     // const val = useContext(UserContext);
@@ -54,7 +50,6 @@ const SignUpForm = () => {
                 password
             );
             await createUserDocumentFromAuth( user, { displayName });
-            setCurrentUser(user);
             alert('Account created');
             resetFormFields();
         } catch (error) {
