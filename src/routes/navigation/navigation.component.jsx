@@ -10,7 +10,8 @@ import { CartContext } from '../../contexts/cart.context';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import './navigation.styles.scss';
+// import './navigation.styles.scss';
+import { NavigationContainer, NavLinksContainer, NavLink, LogoContainer } from './navigation.styles';
 
 const Navigation = () => {
     const { currentUser }  = useContext(UserContext);
@@ -22,27 +23,27 @@ const Navigation = () => {
 
     return(
         <Fragment>
-            <div className='navigation'>
-                <Link className='logo-container' to='/'>
+            <NavigationContainer>
+                <LogoContainer to='/'>
                     <CrwnLogo className='logo' />
-                </Link>
-                <div className='nav-links-container'>
-                    <Link className='nav-link' to='/shop'>
+                </LogoContainer>
+                <NavLinksContainer>
+                    <NavLink to='/shop'>
                         Shop
-                    </Link>
+                    </NavLink>
                     {currentUser ? 
-                        (<span className='nav-link' onClick={signOutHandler}>Sign Out</span>) : 
-                        (<Link className='nav-link' to='/auth'>
+                        (<NavLink as='span' className='nav-link' onClick={signOutHandler}>Sign Out</NavLink>) : 
+                        (<NavLink to='/auth'>
                             Sign In
-                        </Link>)
+                        </NavLink>)
                     }
                     <CartIcon /> 
-                </div>
+                </NavLinksContainer>
                 {
                     //this is called short circuit operator
                 cartIsOpen && <CartDropdown />
                 }
-            </div>
+            </NavigationContainer>
             <Outlet />
         </Fragment>
     );
