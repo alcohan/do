@@ -8,10 +8,13 @@ import { CartContext } from '../../contexts/cart.context';
 import { CartDropdownContainer, CartItems, EmptyMessage } from './cart-dropdown.styles.jsx';
 
 const CartDropdown = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, toggleCart } = useContext(CartContext);
     const navigate = useNavigate();
 
-    const checkoutHandler = () => navigate('/checkout')
+    const checkoutHandler = () => {
+        toggleCart();
+        navigate('/checkout');
+    }
 
     return (
         <CartDropdownContainer>

@@ -6,14 +6,16 @@ import { CartContext } from '../../contexts/cart.context';
 import {CartIconContainer} from './cart-icon.styles.jsx';
 
 const CartIcon = ( ) => {
-    const { cartIsOpen, setCartIsOpen, cartQuantity } = useContext(CartContext);
+    const { cartQuantity, toggleCart } = useContext(CartContext);
+   
+    const onClickHandler = () => {
+        if(window.location.pathname==='/checkout')
+            return;
+        toggleCart();
+    }
 
-    const toggleCart = () => {
-        setCartIsOpen(!cartIsOpen);
-    };
-    
     return (
-        <CartIconContainer onClick={toggleCart}>
+        <CartIconContainer onClick={onClickHandler}>
             <ShoppingIcon className='shopping-icon' />
             <span className='item-count'>
                 {cartQuantity}
