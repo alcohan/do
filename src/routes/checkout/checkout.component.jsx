@@ -7,7 +7,7 @@ import CheckoutItem from "../../components/checkout-item/checkout-item.component
 import { CheckoutContainer, CheckoutHeader, HeaderBlock, Total } from './checkout.styles';
 
 const Checkout = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, cartSubtotal } = useContext(CartContext);
 
     return (
         <CheckoutContainer>
@@ -33,7 +33,9 @@ const Checkout = () => {
                 ) 
             )}
             <Total>
-                Total: ${cartItems.reduce( (total, item) => total+item.price*item.quantity, 0)}
+                Total: ${cartSubtotal
+                // cartItems.reduce( (total, item) => total+item.price*item.quantity, 0)
+                }
             </Total>
         </CheckoutContainer>
     );
