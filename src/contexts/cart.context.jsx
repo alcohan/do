@@ -104,8 +104,8 @@ export const CartProvider = ( { children } ) => {
     const [ state, dispatch ] = useReducer(cartReducer, INITIAL_STATE);
     const { cartIsOpen, cartItems, cartQuantity, cartSubtotal } = state;
 
-    console.log('CartProvider is rendering... Reducer contains: ');
-    console.log(state);
+    // console.log('CartProvider is rendering... Reducer contains: ');
+    // console.log(state);
 
     // const toggleCart = () => {
     //     setCartIsOpen(!cartIsOpen);
