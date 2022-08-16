@@ -16,7 +16,7 @@ const ProductCard = ( { product } ) => {
             <div className='footer'>
                 <span className='name'>{name}</span>
                 <span className='price'>{price}</span>
-                <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick={addProductToCart} >Add to cart</Button>
+                <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick={addProductToCart} >+add</Button>
             </div>
         </ProductCardContainer>
     );
