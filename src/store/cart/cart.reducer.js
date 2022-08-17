@@ -36,7 +36,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action = {}) => {
     const { cartItems, cartQuantity, cartSubtotal } = state;
 
     switch (type) {
-        case CART_ACTION_TYPES.SET_CART_ITEMS: 
+        case CART_ACTION_TYPES.SET_CART_CONTENTS: 
             return {
                 ...state,
                 cartItems: payload,
