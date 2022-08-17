@@ -36,10 +36,10 @@ export const CART_ACTION_TYPES = {
 }
 
 const cartReducer = (state, action) => {
-    console.log('Dispatched cartReducer. State is:');
-    console.log(state);
-    console.log('Action is: ');
-    console.log( action );
+    // console.log('Dispatched cartReducer. State is:');
+    // console.log(state);
+    // console.log('Action is: ');
+    // console.log( action );
 
     const { type, payload } = action;
     const { cartItems, cartQuantity, cartSubtotal } = state;

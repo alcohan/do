@@ -1,4 +1,7 @@
 import { useContext } from "react";
+import { useSelector } from 'react-redux';
+
+// import { addItemToCart, removeItemFromCart, deleteItemFromCart } from "../../store/cart/cart.action.js";
 import { CartContext } from "../../contexts/cart.context";
 
 import { CheckoutItemContainer, ImageContainer, } from './checkout-item.styles.jsx';
