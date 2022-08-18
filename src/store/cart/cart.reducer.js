@@ -2,28 +2,7 @@ import { CART_ACTION_TYPES } from "./cart.types";
 
 export const CART_INITIAL_STATE = {
     cartIsOpen: false,
-    cartItems: [
-    {
-    "id": 1,
-    "name": "Brown Brim",
-    "imageUrl": "https://i.ibb.co/ZYW3VTp/brown-brim.png",
-    "price": 25,
-    "quantity": 4
-  },
-  {
-    "id": 2,
-    "name": "Blue Beanie",
-    "imageUrl": "https://i.ibb.co/ypkgK0X/blue-beanie.png",
-    "price": 18,
-    "quantity": 2
-  },
-  {
-    "id": 3,
-    "name": "Brown Cowboy",
-    "imageUrl": "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
-    "price": 35,
-    "quantity": 1
-  }],
+    cartItems: [],
 };
 
 export const cartReducer = (state = CART_INITIAL_STATE, action = {}) => {
