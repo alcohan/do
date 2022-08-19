@@ -1,9 +1,9 @@
-// import { USER_ACTION_TYPES } from './user.types';
-
 import { USER_ACTION_TYPES } from "./user.types";
 
 const INITIAL_STATE = {
-    currentUser: null
+    currentUser: null,
+    isLoading: false,
+    error: null,
 }
 
 // A reducer function should set the new state based on the action {type,payload} passed. 
@@ -13,11 +13,24 @@ export const userReducer = ( state=INITIAL_STATE, action ) => {
     const { type, payload } = action;
 
     switch(type) {
-        case USER_ACTION_TYPES.SET_CURRENT_USER:
+        case USER_ACTION_TYPES.SIGN_IN_SUCCESS:
             return {
                 ...state,
-                currentUser: payload
+                currentUser: payload,
+                isLoading: false,
             };
+        case USER_ACTION_TYPES.SIGN_IN_FAILED:
+        case USER_ACTION_TYPES.SIGN_UP_FAILED:
+        case USER_ACTION_TYPES.SIGN_OUT_FAILED:
+            return { ...state, error: payload, isLoading: false };
+
+        case USER_ACTION_TYPES.SIGN_OUT_SUCCESS:
+            return{...state, currentUser:null}
+
+        case USER_ACTION_TYPES.GOOGLE_SIGN_IN_START:
+        case USER_ACTION_TYPES.EMAIL_SIGN_IN_START:
+            return { ...state, isLoading: true }
+
         default:
             return state;
     }
