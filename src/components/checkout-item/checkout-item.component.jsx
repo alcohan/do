@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectCartItems } from "../../store/cart/cart.selector.js";
-import { addItemToCart, removeItemFromCart, deleteItemFromCart } from "../../store/cart/cart.action.js";
+import { selectCartItems } from "../../store/cart/cart.selector";
+import { addItemToCart, removeItemFromCart, deleteItemFromCart } from "../../store/cart/cart.action";
 
 import { CheckoutItemContainer, ImageContainer, } from './checkout-item.styles.jsx';
 
