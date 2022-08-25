@@ -7,6 +7,12 @@ export const CategoryContainer = styled.div`
     row-gap: 50px;
     margin-left: 20px;
     margin-right: 20px;
+
+    @media screen and (max-width:800px) {
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 15px;
+    }
 `
 export const CategoryTitle = styled.h2`
     font-size: 38px;

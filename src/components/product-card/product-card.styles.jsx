@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const ProductCardContainer = styled.div`
-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     height: 350px;
     align-items: center;
     position: relative;
-  
+
+    
     img {
       width: 100%;
       height: 95%;
@@ -21,13 +22,19 @@ width: 100%;
       position: absolute;
       top: 255px;
       display: none;
+      @media screen and (max-width:800px) {
+        display: block;
+        opacity: 0.7
+        min-width: unset;
+        padding: 0 10px;
+      }
     }
   
     &:hover {
       img {
         opacity: 0.8;
       }
-  
+      
       button {
         opacity: 0.85;
         display: flex;
@@ -40,14 +47,26 @@ width: 100%;
       display: flex;
       justify-content: space-evenly;
       font-size: 18px;
-  
+      
       .name {
         width: 90%;
         margin-bottom: 15px;
       }
-  
+      
       .price {
         width: 10%;
+      }
+    }
+
+    @media screen and (max-width:800px) {
+      width: 40vw;
+      &:hover {
+        img {
+          opacity: unset;
+        }
+        button{
+          opacity: unset;
+        }
       }
     }
 `
