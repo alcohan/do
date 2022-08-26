@@ -12,6 +12,7 @@ export const CategoryContainer = styled.div`
         align-items: center;
         grid-template-columns: repeat(2,1fr);
         grid-gap: 15px;
+
     }
 `
 export const CategoryTitle = styled.h2`
@@ -19,10 +20,3 @@ export const CategoryTitle = styled.h2`
     margin-bottom: 25px;
     text-align: center;
 `
-// .category-container{
-
-// }
-
-// .category-title {
-
-// }
