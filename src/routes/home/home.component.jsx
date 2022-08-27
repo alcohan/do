@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import Directory from '../../components/directory/directory.component';
+import TodoHome from '../../components/todo-home/todo-home.component';
 
 const Home = () => {
   return (
     <div>
-      <Directory />
+      <TodoHome />
       <Outlet />
     </div>
   );

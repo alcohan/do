@@ -26,7 +26,8 @@ const Navigation = () => {
         <Fragment>
             <NavigationContainer>
                 <LogoContainer to='/'>
-                    <CrwnLogo className='logo' />
+                    <span>A</span>
+                    {/* <CrwnLogo className='logo' /> */}
                 </LogoContainer>
                 <NavLinksContainer>
                     <NavLink to='/shop'>
